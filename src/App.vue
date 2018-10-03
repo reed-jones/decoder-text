@@ -1,18 +1,27 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <input v-model='text'>
+    <input v-model='nextWord'>
+    <button @click='text = nextWord' >Button</button>
+  <decoder-text class='sidebar-title'
+    v-model='model'
+    :target='text'
+    :fps='24'
+    :resetWord='false'
+    :steps='4'
+  />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
+  data: _ => ({
+    model: '',
+    text: '',
+    nextWord: ''
+  })
 }
 </script>
 

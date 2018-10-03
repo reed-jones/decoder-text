@@ -1,10 +1,18 @@
 {
-  "name": "decoder-text",
+  "name": "@j0nz/decoder-text",
+  "main": "./dist/decoder-text.common.js",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "license": "ISC",
+  "author": "Reed Jones <reedjones@reedjones.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "bundle": "vue-cli-service build --target lib --name decoder-text ./src/components/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reed-jones/decoder-text.git"
   },
   "dependencies": {
     "vue": "^2.5.17"
@@ -13,5 +21,12 @@
     "@vue/cli-plugin-babel": "^3.0.3",
     "@vue/cli-service": "^3.0.3",
     "vue-template-compiler": "^2.5.17"
-  }
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ]
 }
