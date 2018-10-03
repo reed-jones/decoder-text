@@ -3,13 +3,13 @@
     <input v-model='text'>
     <input v-model='nextWord'>
     <button @click='text = nextWord' >Button</button>
-  <decoder-text class='sidebar-title'
-    v-model='model'
-    :target='text'
-    :fps='24'
-    :resetWord='false'
-    :steps='4'
-  />
+    <decoder-text
+      v-model='model'
+      :target='text'
+      :fps='24'
+      :resetWord='false'
+      :steps='4'
+    />
   </div>
 </template>
 
