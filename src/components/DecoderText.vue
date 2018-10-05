@@ -57,6 +57,7 @@ export default {
     },
     startJumble(original) {
       this.running = true
+      this.$emit('start', original)
       let types = original.split('').map(l => {
         if  (l == ' ') {
           return 'space'
@@ -81,6 +82,7 @@ export default {
     jumble(orig, filler, types, index = 0) {
       if (index > orig.length) {
         this.running = false;
+        this.$emit('end', orig)
         return;
       }
 
@@ -97,6 +99,7 @@ export default {
           this.jumble(orig, filler, types, index + 1);
         }, 1000 / this.fps);
       } else {
+        this.$emit('abort', orig, this.cachedValue)
         this.running = false
       }
     }
